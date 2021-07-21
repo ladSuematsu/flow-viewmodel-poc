@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_fetch_wait"
+    app:startDestination="@id/fragmentFetchWaitHome">
+    <fragment
+        android:id="@+id/fragmentFetchWaitHome"
+        android:name="com.example.flowviewmodelpoc.fetch.ui.FragmentFetchWaitHome"
+        android:label="FragmentSecondaryHome" >
+        <action
+            android:id="@+id/action_fragmentFetchWaitHome_to_fetchWaitFlowFragment"
+            app:destination="@id/fetchWaitFlowFragment"
+            app:popUpTo="@id/nav_graph_fetch_wait"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragmentFetchWaitHome_to_fetchWaitAlternativeFlowFragment"
+            app:destination="@id/fetchWaitAlternativeFlowFragment"
+            app:popUpTo="@id/nav_graph_fetch_wait"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragmentFetchWaitHome_to_fetchWaitJobFragment"
+            app:destination="@id/fetchWaitJobFragment"
+            app:popUpTo="@id/nav_graph_fetch_wait"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fetchWaitAlternativeFlowFragment"
+        android:name="com.example.flowviewmodelpoc.fetch.ui.FetchWaitAlternativeFlowFragment"
+        android:label="FetchWaitFragment" />
+    <fragment
+        android:id="@+id/fragmentFetchWaitConclusion"
+        android:name="com.example.flowviewmodelpoc.fetch.ui.FragmentFetchWaitConclusion"
+        android:label="FragmentFetchWaitConclusion">
+        <action
+            android:id="@+id/action_fragmentFetchWaitConclusion_to_fragmentFetchWaitHome"
+            app:destination="@id/fragmentFetchWaitHome"
+            app:popUpTo="@id/fragmentFetchWaitConclusion"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fetchWaitJobFragment"
+        android:name="com.example.flowviewmodelpoc.fetch.ui.FetchWaitJobFragment"
+        android:label="FetchWaitJobFragment" />
+
+    <action
+        android:id="@+id/action_fetchWaitFragment_to_fragmentFetchWaitConclusion"
+        app:destination="@id/fragmentFetchWaitConclusion"
+        app:popUpTo="@id/fetchWaitAlternativeFlowFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_fetchWaitFragment_to_fragmentFetchWaitHome"
+        app:destination="@id/nav_graph_fetch_wait"
+        app:popUpTo="@id/nav_graph_fetch_wait"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/fetchWaitFlowFragment"
+        android:name="com.example.flowviewmodelpoc.fetch.ui.FetchWaitFlowFragment"
+        android:label="FetchWaitFlowFragment" />
+
+</navigation>
